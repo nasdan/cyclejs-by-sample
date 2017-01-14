@@ -1,4 +1,4 @@
-# 01 Hello CycleJS
+# 02 Events
 
 In this sample we will introduce a basic CycleJS concept, handling events.
 
