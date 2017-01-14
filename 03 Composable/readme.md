@@ -68,7 +68,7 @@ export const Header = (sources) => {
   const vtree$ = props$.map(props =>
     ul('.nav .nav-tabs', [
       li('.active', [
-        a('.home', props.tabName)
+        a(props.tabName)
       ])
     ])
   );
@@ -93,7 +93,7 @@ export const Body = (sources) => {
 
   return {
     DOM: props$.map(props =>
-      h3(`This is a ${props.tabName} `)
+      h3(`This is ${props.tabName} `)
     )
   }
 }
@@ -139,7 +139,6 @@ export const App = (sources) => {
 
 ```javascript
 import {run} from '@cycle/xstream-run';
-import xs from 'xstream';
 import {makeDOMDriver} from '@cycle/dom';
 import {App} from './app';
 
