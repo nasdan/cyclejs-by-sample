@@ -29,7 +29,7 @@ npm install babel-plugin-transform-react-jsx snabbdom-jsx --save-dev
 }
 ```
 
-- Now, we are going to use it
+- Now, we are going to use JSX:
 
 ### ./src/components/header.js
 

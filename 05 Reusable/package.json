@@ -1,0 +1,42 @@
+{
+  "name": "cyclejs-by-sample",
+  "version": "1.0.0",
+  "description": "Samples working with CycleJS and Webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nasdan/cyclejs-by-sample.git"
+  },
+  "author": "Daniel Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nasdan/cyclejs-by-sample/issues"
+  },
+  "homepage": "https://github.com/Nasdan/cyclejs-by-sample#readme",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-env": "^1.1.6",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.26.0",
+    "snabbdom-jsx": "^0.3.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "@cycle/dom": "^14.3.0",
+    "@cycle/isolate": "^1.4.0",
+    "@cycle/xstream-run": "^4.2.0",
+    "bootstrap": "^3.3.7",
+    "xstream": "^9.3.0"
+  }
+}
