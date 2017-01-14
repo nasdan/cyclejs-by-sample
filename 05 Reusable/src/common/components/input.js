@@ -4,10 +4,11 @@ import {html} from 'snabbdom-jsx';
 export const Input = (sources) => {
   const props$ = sources.props;
 
-  const onChange$ = sources.DOM.select('.form-control').events('input');
+  const onChange$ = sources.DOM.select('.form-control').events('input')
+    .map(e => e.target.value);
 
   const validation$ = xs.combine(onChange$, props$)
-    .map(([e, props]) => props.validationFn(e.target.value))
+    .map(([value, props]) => props.validationFn(value))
     .startWith(true);
 
   const state$ = xs.combine(validation$, props$)

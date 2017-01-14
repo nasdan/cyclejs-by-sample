@@ -5,8 +5,19 @@ import {Input} from '../../common/components/input';
 import {required} from '../../common/validations/required';
 
 export const MemberPage = (sources) => {
-  const nameProps$ = xs.of({label: 'Name', placeholder: 'name', error: 'Name required', validationFn: required});
-  const emailProps$ = xs.of({label: 'Email', placeholder: 'email', error: 'Email required', validationFn: required});
+  const nameProps$ = xs.of({
+    label: 'Name',
+    placeholder: 'name',
+    error: 'Name required',
+    validationFn: required
+  });
+
+  const emailProps$ = xs.of({
+    label: 'Email',
+    placeholder: 'email',
+    error: 'Email required',
+    validationFn: required
+  });
 
   const NameInput = isolate(Input);
   const EmailInput = isolate(Input);

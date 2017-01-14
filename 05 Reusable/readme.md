@@ -39,10 +39,11 @@ import {html} from 'snabbdom-jsx';
 export const Input = (sources) => {
   const props$ = sources.props;
 
-  const onChange$ = sources.DOM.select('.form-control').events('input');
+  const onChange$ = sources.DOM.select('.form-control').events('input')
+    .map(e => e.target.value);
 
   const validation$ = xs.combine(onChange$, props$)
-    .map(([e, props]) => props.validationFn(e.target.value))
+    .map(([value, props]) => props.validationFn(value))
     .startWith(true);
 
   const state$ = xs.combine(validation$, props$)
@@ -67,6 +68,7 @@ export const Input = (sources) => {
     DOM: vtree$
   }
 }
+
 ```
 
 - Create required validation to validate inputs:
@@ -92,8 +94,19 @@ import {Input} from '../../common/components/input';
 import {required} from '../../common/validations/required';
 
 export const MemberPage = (sources) => {
-  const nameProps$ = xs.of({label: 'Name', placeholder: 'name', error: 'Name required', validationFn: required});
-  const emailProps$ = xs.of({label: 'Email', placeholder: 'email', error: 'Email required', validationFn: required});
+  const nameProps$ = xs.of({
+    label: 'Name',
+    placeholder: 'name',
+    error: 'Name required',
+    validationFn: required
+  });
+
+  const emailProps$ = xs.of({
+    label: 'Email',
+    placeholder: 'email',
+    error: 'Email required',
+    validationFn: required
+  });
 
   const NameInput = isolate(Input);
   const EmailInput = isolate(Input);
